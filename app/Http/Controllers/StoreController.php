@@ -25,7 +25,7 @@ class StoreController extends BaseController
     		$date = date('YmdHis');
     		//Do convert
     		$request->file('document')->move(public_path('upload'),$name,$date);
-    		$txt_file = file_get_contents(public_path('upload\\'.$name));
+    		$txt_file = file_get_contents(public_path('upload\\'.$name,$date));
 			$rows = explode(";", $txt_file);
 			$test = implode(" ", $rows);
 			// if(!preg_match_all('/^[A-Z a-z 0-9  \r\n]+$/', $txt_file)){
